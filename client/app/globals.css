@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* SCADA Theme */
+  --scada-dark: #0a0a0a;
+  --scada-cyan: #00ffff;
+  --scada-green: #00ff88;
+  --scada-purple: #b464ff;
+  --scada-yellow: #ffcc00;
+  --scada-red: #ff0000;
+  --scada-text: #00ff88;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-scada-dark: var(--scada-dark);
+  --color-scada-cyan: var(--scada-cyan);
+  --color-scada-green: var(--scada-green);
+  --color-scada-purple: var(--scada-purple);
+  --color-scada-yellow: var(--scada-yellow);
+  --color-scada-red: var(--scada-red);
+  --color-scada-text: var(--scada-text);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-scada-dark text-scada-text;
+  }
+}
+
+/* Enhanced animations for professional cinematic SCADA UI */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 136, 0.5), inset 0 0 5px rgba(0, 255, 136, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.8), inset 0 0 10px rgba(0, 255, 136, 0.2);
+  }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 0.98;
+  }
+  20%, 24%, 55% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 10px;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.8));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 49%, 100% {
+    opacity: 1;
+  }
+  50%, 99% {
+    opacity: 0;
+  }
+}
+
+/* Added shake animation for auth failures and CRT distortion */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 1; }
+  5%, 10%, 15%, 20%, 50% { opacity: 0.97; }
+}
+
+/* Shadow utilities */
+.shadow-glow-green {
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3), inset 0 0 8px rgba(0, 255, 136, 0.1);
+}
+
+.shadow-glow-yellow {
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.3), inset 0 0 8px rgba(255, 204, 0, 0.1);
+}
+
+.shadow-glow-red {
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3), inset 0 0 8px rgba(255, 0, 0, 0.1);
+}
+
+/* Added CRT screen effect and glow animation */
+.animate-shake {
+  animation: shake 0.3s;
+}
+
+.crt-effect {
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.6);
+}
