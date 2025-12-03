@@ -266,24 +266,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Inspired by industrial SCADA systems and sci-fi interfaces
 - Built with modern web technologies and Android debugging tools
 - Special thanks to the open-source community
 
----
-
-## 📧 Contact
-
-**Project Link:** [https://github.com/Exan2/phone-sensor-scada](https://github.com/Exan2/phone-sensor-scada)
-
----
-
-<div align="center">
-
-**⭐ Star this repo if you find it useful!**
-
-Made with ❤️ and ☕
-
-</div>
